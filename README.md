@@ -1,20 +1,63 @@
-# Documentação de Comandos
+# Cluster Kubernetes
+
+> _Este repositório contém uma documentação detalhada com instruções e comandos para configurar, gerenciar e operar um cluster Kubernetes em um ambiente de desenvolvimento local. Inclui desde a configuração básica das VMs e rede até a implantação de aplicações em Kubernetes, integração com ferramentas como Terraform, e acesso ao Kubernetes Dashboard._
+
+Abaixo está uma visão geral do conteúdo abordado:
 
 <div align="center">
   <img src="./image/diagram/diagram.svg" alt="diagram" width="100%" />
 </div>
 
-## Help
+<div align="center">
+  <img src="./image/README/1735746408263.png" alt="diagram" width="100%" />
+</div>
 
-- [Kubernetes cluster playlist](https://www.youtube.com/watch?v=iwlNCePWiw4&list=PLHMWRJcYzpI436YPGOf33qOf4p6q8I7pD)
 
-## Cenários
+## 📄 Visão Geral
 
-> Três vms rodando Ubuntu Server 24.10 no Virtual Box. Cada uma com 2GB de memória e 2 vCPU.
+- Configuração de um cluster Kubernetes em máquinas virtuais (VirtualBox).
+- Passos para configurar IP estático e hostname das VMs.
+- Instalação e configuração de ferramentas essenciais como Docker, Calico e Kubernetes.
+- Criação de deploys e serviços para gerenciar aplicações distribuídas no cluster.
+- Configuração do Kubernetes Dashboard para monitoramento e gestão.
+- Utilização de Terraform para gerenciar recursos no cluster.
 
-- master.k8s.local (192.168.1.100)
-- worker-1.k8s.local (192.168.1.101)
-- worker-2.k8s.local (192.168.1.102)
+## 🖥️ Infraestrutura
+
+> O cluster é composto por três máquinas virtuais rodando Ubuntu Server 24.10, cada uma configurada com 2GB de memória e 2 vCPUs:
+
+- **master.k8s.local** - 192.168.1.100
+- **worker-1.k8s.local** - 192.168.1.101
+- **worker-2.k8s.local** - 192.168.1.102
+
+
+## 🚀 Recursos Incluídos
+
+1. **Configuração Inicial**:
+   - Atualização de pacotes, instalação de ferramentas e configuração de IP estático.
+   - Desativação de memória swap e habilitação de encaminhamento de pacotes IPv4.
+
+2. **Instalação de Software**:
+   - Docker e Containerd.
+   - Kubernetes (`kubelet`, `kubeadm`, `kubectl`).
+
+3. **Gerenciamento do Cluster**:
+   - Inicialização do cluster com `kubeadm`.
+   - Instalação de Calico como rede de pods.
+   - Implantação de aplicações usando Deployments, DaemonSets e Services.
+
+4. **Acesso e Monitoramento**:
+   - Configuração do Kubernetes Dashboard com autenticação baseada em token.
+   - Acesso ao cluster a partir de uma máquina local utilizando `kubeconfig`.
+
+5. **Automatização com Terraform**:
+   - Criação e gerenciamento de recursos Kubernetes via Terraform.
+
+## 🔗 Links Úteis
+
+- [Playlist: Kubernetes Cluster no YouTube](https://www.youtube.com/watch?v=iwlNCePWiw4&list=PLHMWRJcYzpI436YPGOf33qOf4p6q8I7pD)
+
+---
 
 > [!WARNING]
 > O IP do master.k8s.local deve ser configurado no arquivo de configuração do Netplan para 192.168.1.xxx/24.
@@ -501,6 +544,7 @@ Copie o token para usar na interface do Kubernetes Dashboard.
    ```
 
    Exemplo:
+
    ```
    https://192.168.1.100:32000
    ```
