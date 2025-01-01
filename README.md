@@ -480,7 +480,9 @@ NAME                   TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)         
 kubernetes-dashboard   NodePort   10.96.183.239   <none>        443:32000/TCP   2m
 ```
 
-Agora você pode acessar o Dashboard via `https://<IP_DO_NÓ>:32000`.
+Agora você pode acessar o Dashboard na porta mostrada com o comando anterior(`https://<IP_DO_NÓ>:32000`).
+
+![1735747438705](image/README/1735747438705.png)
 
 ---
 
