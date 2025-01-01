@@ -9,7 +9,7 @@ Abaixo está uma visão geral do conteúdo abordado:
 </div>
 
 <div align="center">
-  <img src="./image/README/1735746408263.png" alt="diagram" width="100%" />
+  <img src="./image/readme/1735746408263.png" alt="virtualbox" width="100%" />
 </div>
 
 
